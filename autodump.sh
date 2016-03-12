@@ -1,3 +1,5 @@
+#!/bin/bash
+
 CONNECTED_POSTGRES_INSTANCES=$( env | grep _PORT_5432_TCP_ADDR | grep -vP '_\d+_PORT_5432_TCP_ADDR' | awk 'BEGIN { FS = "_PORT_5432_TCP_ADDR=" }; { print $1 }')
 
 for databaseName in $CONNECTED_POSTGRES_INSTANCES   #  <-- Note: Added "" quotes.
